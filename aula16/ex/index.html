@@ -6,17 +6,35 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Minha soluçção do exercicio: 
     <script>
         const numero = Number(window.prompt('Digite um número: '));
         
         document.body.innerHTML += `<h1> Seu número é: ${numero} </h1> <br>`;
         document.body.innerHTML += `Raiz quadrada: ${Math.sqrt(numero)} <br>`;
-        document.body.innerHTML += `${numero} é inteiro: ${Number.isInteger(numero)}`;
-        document.body.innerHTML += ``;
-        //document.body.innerHTML += ``;
-        //document.body.innerHTML += ``;
-        //document.body.innerHTML += ``;
+        document.body.innerHTML += `${numero} é inteiro: ${Number.isInteger(numero)} <br>`;
+        document.body.innerHTML += `E NaN: ${Number.isNaN(numero)}<br>`;
+        document.body.innerHTML += `Arredondando para baixo: ${Math.floor(numero)} <br>`;
+        document.body.innerHTML += `Arredondando para cima: ${Math.ceil(numero)} <br>`;
+        document.body.innerHTML += `Com duas casas decimais ${numero.toFixed(2).replace('.', ',')}`;
 
     </script>
+    -->
+
+    <!--Solução do professor -->
+
+    <section>
+        <h1>O Seu número é <span id="numero-titulo">0</span></h1>
+        <div id="texto">Texto</div>
+        <!--
+        <div id="inteiro">inteiro</div>
+        <p>É NaN: <span id="nan"></span></p>
+        <div id="baixo">baixo</div>
+        <div id="cima">cima</div>
+        <div id="decimais">casas decimais</div>
+        -->
+    </section>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
