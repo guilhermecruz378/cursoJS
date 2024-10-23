@@ -62,6 +62,12 @@ form button:active {
 }
 
 .tabela {
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-around;
+}
+tr {
+    display: flex;
+    flex-flow: column nowrap;
 }
