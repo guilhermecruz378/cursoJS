@@ -60,3 +60,8 @@ form button:hover {
 form button:active {
     background-color: rgb(20, 56, 110);
 }
+
+.tabela {
+    display: flex;
+    flex-flow: row nowrap;
+}
