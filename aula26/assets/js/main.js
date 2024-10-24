@@ -20,7 +20,14 @@ form.addEventListener('submit', function (e) { // captura-evento
     }
 
     const imc = getImc(peso, altura);
-    console.log(imc);
+    const nivelImc = getNivel(imc);
+
+    const msg = `Seu Imc é ${imc} (${nivelImc}).`;
+
+    setResultado(msg, true)
+
+
+    //console.log(imc, nivelImc);
     //console.log('Evento previnido');
     //setResultado('ola mundo');
 }); // captura-evento
@@ -29,12 +36,12 @@ function getNivel(imc) {
     const nivel = ['Abaixo do peso','Peso normal',' Sobrepeso',
         'Obesidade grau 1','Obesidade grau 2','Obesidade grau 3'];
     
+    if (imc >= 39.9 ) return nivel[5];
+    if (imc >= 34.9 ) return nivel[4];
+    if (imc >= 29.9 ) return nivel[3];
+    if (imc >= 24.9 ) return nivel[2];
+    if (imc >= 18.5 ) return nivel[1];
     if (imc < 18.5) return nivel[0];
-    if (imc <= 24.9) return nivel[1];
-    if (imc <= 29.9) return nivel[2];
-    if (imc <= 34.9) return nivel[3];
-    if (imc <= 39.9) return nivel[4];
-    if (imc > 40) return nivel[5];
 
 }
 
@@ -73,6 +80,12 @@ function setResultado(msg, isValid) { // oque eu mandar de text aqui vai ser exi
     const p = criaP();
     p.innerHTML = msg
     resultado.appendChild(p);
+
+    if (isValid){ p.classList.add('paragrafo-resultado');
+
+    } else {
+        p.classList.add('bad');
+    }
 }
 
 
