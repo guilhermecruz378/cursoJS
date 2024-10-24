@@ -71,3 +71,7 @@ tr {
     display: flex;
     flex-flow: column nowrap;
 }
+.paragrafo-resultado {
+    background-color: lightgreen;
+    padding: 10px 20px;
+}
