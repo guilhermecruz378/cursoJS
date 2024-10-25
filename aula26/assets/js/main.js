@@ -1,9 +1,8 @@
-//-> evitar que algo aconteça= capturar evento de submit do formulario usando o método:addEventListener();
 const form = document.querySelector('#form');
 
-form.addEventListener('submit', function (e) { // captura-evento
+form.addEventListener('submit', function (e) { 
     e.preventDefault();
-    const inputPeso = e.target.querySelector('#idpeso'); // o target vai me informar o elemento que está recebendo o evento.
+    const inputPeso = e.target.querySelector('#idpeso'); 
     const inputAltura = e.target.querySelector('#idaltura');
 
     const peso = Number(inputPeso.value);
@@ -26,11 +25,7 @@ form.addEventListener('submit', function (e) { // captura-evento
 
     setResultado(msg, true)
 
-
-    //console.log(imc, nivelImc);
-    //console.log('Evento previnido');
-    //setResultado('ola mundo');
-}); // captura-evento
+}); 
 
 function getNivel(imc) {
     const nivel = ['Abaixo do peso','Peso normal',' Sobrepeso',
@@ -52,30 +47,15 @@ function getImc (peso, altura) {
 }
 
 function criaP (className) {
-    const p = document.createElement('p'); //criando o paragrafo => estou criando um elemento esse método "createElement" == serve para criar algo no HTML, porem, ainda não escreve na minha página.
+    const p = document.createElement('p');
     return p;
     
 }
 
-function setResultado(msg, isValid) { // oque eu mandar de text aqui vai ser exibido na minha div id='resultado'.
-    const resultado = document.querySelector('#resultado') //capturar resultado e obter o id='resultado'
-    // resultado.innerHTML += `<p>${msg} </p>`; // add no html, oque mandar aqui vai aparecer na minha pagina, no 'local' onde estou adicionando, no caso na minha div id='resultado'.
+function setResultado(msg, isValid) {
+    const resultado = document.querySelector('#resultado') 
 
-    resultado.innerHTML = '';//Toda vez que chamar a função resultado vou zerar o HTML.
-
-    /*
-    const p = document.createElement('p'); //criando o paragrafo => estou criando um elemento esse método "createElement" == serve para criar algo no HTML, porem, ainda não escreve na minha página.
-     */
-
-    /*
-    p.innerHTML = 'Qualquer coisa';//adicionado na memoria => colocando o HTML, no paragrafo.
-    */
-
-    //resultado.appendChild(p); // exibindo na página => esse metodo vai fazer a minha const p ser inserida como filho na minha div id='resultado'.
-
-    /*
-    p.classList.add('paragrafo-resultado'); // criando uma classe no meu elemento criado com JS.
-    */
+    resultado.innerHTML = '';
 
     const p = criaP();
     p.innerHTML = msg
