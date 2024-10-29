@@ -31,7 +31,7 @@ function formataData(data) {
         diaSemana = 'Sábado';
         
     } 
-    const diaNum = zeroAesquerda(data.getDate());
+    const diaNum = data.getDate();
     let mes = data.getMonth() + 1;
 
     if (mes === 1) {
@@ -81,22 +81,4 @@ function formataData(data) {
 
 const dataNova = new Date();
 let dataAtual = formataData(dataNova);
-//console.log(dataAtual);
 dataAtual.innerHTML = `${data.value}`;
-
-function criaH1 (data) {
-    const h = document.createElement('H1');
-    return h;
-}
-
-function mostrarNaTela (data) {
-
-    const resultado = document.querySelector('.contaniner');
-    resultado.innerHTML = '';
-
-    const h = criaH1(dataAtual);
-    h.innerHTML = data
-    resultado.appendChild(h)
-    
-}
-
