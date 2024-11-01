@@ -9,6 +9,6 @@ const pessoa = { // objeto
 };
 
 // Atribuição via desestruturação
-const {nome = '', sobrenome, idade} = pessoa;
-
-console.log(nome, sobrenome, idade);
+const {/*nome: teste*/ nome, sobrenome, idade} = pessoa;
+// para MUDAR o nome da variavel eu escrevo a variavel: novo nome (nome: novoNome) o valor continua o mesmo como em cima
+console.log(teste, sobrenome, idade);
