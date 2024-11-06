@@ -14,6 +14,7 @@ const container = document.querySelector('.container');
 //     console.log(position);
 // }
 
+
 const array = [
     {tag: 'p', texto: 'frase 1'},
     {tag: 'div', texto: 'frase 2'},
@@ -22,10 +23,14 @@ const array = [
 ]
 
 for (i=0; i < array.length; i+=1) {
-    let pos = array[i]
-    let tagVaiAparecer = pos.tag
-    let frases = pos.texto
+    //let result = document.querySelector('.container')
+    //result.innerHTML = ''; //-> Vai apagar
+
+    let pos = array[i];
+    // pos.tag
+    let tagVaiAparecer = pos.tag;
+    let frases = pos.texto;
     //console.log(tagVaiAparecer, frases)
 
-    container.innerHTML += 
+    container.innerHTML += `${frases} <br>`
 }
