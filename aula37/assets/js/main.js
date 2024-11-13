@@ -3,11 +3,12 @@ const ps = document.querySelectorAll('p'); // vai selecionar em todos as divs:p 
 
 const estilosBody = getComputedStyle(document.body);//capturar o fundo do body: isso é do browser não funciona fora da página(vs code) -: poderia ser qualquer elemento! isso pode me retonar tudo oque foi computado pelo Browser, usando o exemplo abaixo logo depois do (.) vai me sugerir tudo!
 const backgroudColorBody = estilosBody.backgroundColor;
+
 console.log(backgroudColorBody)
 
 for (let itens of ps) {
     console.log(itens);
-    itens.style.background = backgroudColorBody
+    itens.style.background = backgroudColorBody;
+    itens.style.color = '#FFFFFF';
 }
 
-// MUDAR A COR DO TEXTO PARA BRANCO 
