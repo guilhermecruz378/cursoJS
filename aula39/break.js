@@ -1,6 +1,9 @@
 // O BREAK PODE MELHORAR O SEU CÓDIGO DAR MAIS VELOCIDADE PARA O CÓDIGO
 // PODE POULPAR RECURSOS DO SERVIDOR 
 
+// ------ BREAK SAI DO LAÇO
+
+
 const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 //for (let valor of numeros) {
@@ -19,8 +22,15 @@ contador = 0;
 while (contador < numeros.length) {
     let valor = numeros[contador];
 
+    if (valor === 2) {
+        console.log('Pulei o número 2');
+        contador ++;
+        continue;
+    }
+
     if (valor === 5) {
-        console.log('ACHEI')
+        console.log('ACHEI');
+        contador ++;
         break
     }
     console.log(valor);
