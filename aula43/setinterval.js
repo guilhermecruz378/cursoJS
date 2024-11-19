@@ -6,6 +6,6 @@ function mostraHora() {
     });
 }
 
-setInterval(function() {
+setInterval(function() { // setInterval ==> é usado quando eu quero trabalhar com intervalo de tempo, 
     console.log(mostraHora());
 }, 1000);
