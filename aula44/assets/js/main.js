@@ -1,10 +1,4 @@
 // let segundos = Date.now()
 // console.log(segundos - segundos)
-let segundos = new Date()
-let contaSegundos = segundos.getSeconds()-segundos.getSeconds()
-
-while (contaSegundos < 59) {
-    setInterval(function() {
-        console.log(contaSegundos+=1)
-}, 1000)
-}
+let secMoment = new Date()//.now('24:00:00') //- Date.now('24:00:00');
+console.log(secMoment.toLocaleTimeString('pt-BR'))
