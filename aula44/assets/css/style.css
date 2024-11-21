@@ -60,3 +60,9 @@ form button:hover {
 form button:active {
     background-color: rgb(20, 56, 110);
 }
+#timer {
+    font-size: 3em;
+}
+.pausado {
+    color: red;
+}
