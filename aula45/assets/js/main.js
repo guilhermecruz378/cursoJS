@@ -28,7 +28,8 @@ function salvarTarefas() {
     }
 
     const tarefaJSON = JSON.stringify(listaDeTarefas);
-    console.log(tarefaJSON)
+    //console.log(tarefaJSON)
+    localStorage.setItem('tarefas', tarefaJSON) // esse metodo só salva strings por isso a conversão para JSON
 }
 
 function limpaInput() { 
@@ -71,5 +72,17 @@ document.addEventListener('click', function(e) {
         //console.log('apagar clicado')
         //console.log(el.parentElement)
         el.parentElement.remove()
+        salvarTarefas()
     }
 })
+
+function adicionaTarefa() {
+    const tarefas = localStorage.getItem('tarefas');
+    const listaDeTarefas = JSON.parse(tarefas); // fazendo a string feita com JSON.stringFy voltar a ser um array para iterar com o for
+
+    for (let tarefa of listaDeTarefas) { // iterando o array
+        criaTarefa(tarefa);
+    }
+}
+
+adicionaTarefa()
