@@ -16,6 +16,7 @@ const numeros = [5,50,80,1,2,3,5,8,7,11,15,22,27];
 //     } else {
 //         return false;
 //     }
+// quando um código retorna uma condição não é necessario usar verdadeeiro ou falso ele já retorna automaico, como abaixo.
 // }
 
 function callBackFiltter(valor) {
