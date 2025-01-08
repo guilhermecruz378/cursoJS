@@ -15,7 +15,3 @@ console.log(cincoLetras);
 // console.log(maiorQue50);
 // const terminaA = pessoas.filter(obj => obj.nome.toLowerCase().endsWith('a'));
 // console.log(terminaA);
-
-const json = JSON.stringify(cincoLetras);
-json.
-console.log(json)
