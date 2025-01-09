@@ -23,12 +23,16 @@ const nomePessoa = pessoas.map(function(obj) {
 const removeNome = pessoas.map(obj => ({idade: obj.idade}))
 
 const id = pessoas.map(function(obj, indice) {
-    obj.id = indice
-    // colocar o indicie no inicio
-    return obj
+    //obj.id = indice // ele esta iterando no meu objeto original
+    //é neceessario fazer uma cópia para não alterar o original
+    const novObj = {...obj};
+    novObj.id = indice + 1;
+    return novObj
 })
 
 
-console.log(nomePessoa)
-console.log(removeNome)
+// console.log(nomePessoa)
+// console.log(removeNome)
 console.log(id)
+console.log('-=-=-=-=-=-=-=-=-=-=');
+console.log(pessoas)
