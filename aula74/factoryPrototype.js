@@ -10,10 +10,7 @@ function criaPessoa(nome,sobrenome) {
             console.log(`${this.nome} está  bebendo!`)
         },
      }
-    return {
-        nome,
-        sobrenome,
-    };
+    return Object.create(pessoaPrototype);
 }
 /*criaPessoa.prototype.falar = function() {
     console.log(`${this.nome} está falando!`)
