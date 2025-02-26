@@ -10,7 +10,20 @@ function criaPessoa(nome,sobrenome) {
             console.log(`${this.nome} está  bebendo!`)
         },
      }
-    return Object.create(pessoaPrototype);
+    return Object.create(pessoaPrototype, {
+        nome: {
+            value: nome,
+            writable: true,
+            enumerable: true,
+            configurable: true,
+        },
+        sobrenome: {
+            value: sobrenome,
+            writable: true,
+            enumerable: true,
+            configurable: true,
+        }
+    });
 }
 /*criaPessoa.prototype.falar = function() {
     console.log(`${this.nome} está falando!`)
@@ -24,4 +37,6 @@ criaPessoa.prototype.bebendo = function() {
 */
 
 const p1 = criaPessoa('guilherme', 'cruz')
+const p2 = criaPessoa('Evelins', 'cruz')
 console.log(p1)
+console.log(p2)
