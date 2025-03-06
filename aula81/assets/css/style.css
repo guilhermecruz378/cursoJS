@@ -17,12 +17,17 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: var(--primary-color);
+    background-image: url(pexels-prismattco-2414036.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed ;
 }
 
 .container {
     max-width: 640px;
     margin:50px auto;
-    background-color: white;
+    background-color: rgba(182, 178, 178, 0.789);
     padding: 20px;
     border-radius: 30px;
 }

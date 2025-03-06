@@ -85,7 +85,7 @@ class ValidaFormulario {
     }
 
     validaCPF(campo) {
-        const cpf = new ValidaCPF(campo.value);
+        const cpf = new ValidaCpf(campo.value);
 
         if(!cpf.valida()) {
             this.criaErro(campo, 'CPF inválido.')
