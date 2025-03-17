@@ -20,3 +20,36 @@ function esperaAi(msg, tempo) {
     });
 };
 
+// promise.reject
+function baixaPagina () {
+    const emCache = false;
+
+    if(emCache) {
+        return Promise.reject('pagina em cache')// isso cai no cache
+    } else {
+        return esperaAi('Baixa a página', 3000)// isso cai no then
+    }
+}
+
+baixaPagina().then( dadosPagina =>{
+    console.log(dadosPagina)
+}).catch(erro => {
+    console.log('ERRO',erro)
+})
+
+// promise.resolve
+// function baixaPagina () {
+//     const emCache = false;
+
+//     if(emCache) {
+//         return Promise.resolve('pagina em cache')//isso cai no then
+//     } else {
+//         return esperaAi('Baixa a página', 3000)//isso cai no cache
+//     }
+// }
+
+// baixaPagina().then( dadosPagina =>{
+//     console.log(dadosPagina)
+// }).catch(erro => {
+//     console.log(erro)
+// })
