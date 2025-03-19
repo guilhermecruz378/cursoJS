@@ -16,19 +16,32 @@ function esperaAi(msg, tempo) {
         }, tempo);
     });
 };
-try{
+
     async function executa() {
-        const fase1 = await esperaAi('fase1', rand());
-        console.log(fase1)
+        try{
+        const fase1 = await esperaAi('fase1', 1000);
+        console.log(fase1);
+
+        setTimeout(function(){
+            console.log('Essa promise estava pendente', fase1)
+        },1000)
+
         const fase2 = await esperaAi('fase2', rand());
         console.log(fase2)
-        const fase3 = await esperaAi(4, rand());
+        const fase3 = await esperaAi('fase3', rand());
         console.log(fase3)
-        console.log('terminamos na fase3')
+        console.log('terminamos na fase 3')
+    } catch (erro) {
+        console.log(erro)
     }
-} catch (erro) {
-    console.log(erro)
-}
+    
+    }
 
 
-executa()
+//executa()
+// pending -> pendente
+// fullfiled -> resolvida
+//  reject -> rejeitada
+
+const teste2 = esperaAi('teste', 5000);
+console.log(executa(teste2))
