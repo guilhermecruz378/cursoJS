@@ -1,7 +1,8 @@
-alert('Olá, mundo');
-let signo = window.prompt('Qual seu signo?'); 
-if(signo.toLowerCase() === 'aries') {
-    alert('Legal sou de aries também!!')
-} else {
-    alert('Que legal!')
-}
+//import {nome, sobrenome as mudeiSobrenome, idade, soma} from './modulo1';
+import {nome} from './modulo1';
+// usar 'as' na importação para alterar o nome que foi importado
+
+// const nome = 'Evelin';
+
+console.log(nome);
+//console.log(soma(10, 5));
