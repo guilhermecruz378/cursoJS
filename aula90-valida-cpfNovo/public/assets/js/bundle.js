@@ -553,7 +553,12 @@ var GeraCpf = /*#__PURE__*/function () {
     value: function rand() {
       var min = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100000000;
       var max = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 999999999;
-      return String(math.floor(math.random() * (max - min) + min));
+      return String(Math.floor(Math.random() * (max - min) + min));
+    }
+  }, {
+    key: "formatado",
+    value: function formatado(cpf) {
+      return cpf.slice(0, 3) + '.' + cpf.slice(3, 6) + '.' + cpf.slice(6, 9) + '-' + cpf.slice(9, 11);
     }
   }, {
     key: "geraNovoCpf",
@@ -562,7 +567,7 @@ var GeraCpf = /*#__PURE__*/function () {
       var digito1 = _ValidaCpf__WEBPACK_IMPORTED_MODULE_0__["default"].geraDigito(cpfSemDigito);
       var digito2 = _ValidaCpf__WEBPACK_IMPORTED_MODULE_0__["default"].geraDigito(cpfSemDigito + digito1);
       var novoCpf = cpfSemDigito + digito1 + digito2;
-      return novoCpf;
+      return this.formatado(novoCpf);
     }
   }]);
 }();
