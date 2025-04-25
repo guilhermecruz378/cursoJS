@@ -21,5 +21,3 @@ export default function geraSenha(qtd, maiusculas, minusculas, numeros, simbolos
     }
     return array.join('').slice(0,qtd);
 }
-
-geraSenha(5, true, true, true, true)
