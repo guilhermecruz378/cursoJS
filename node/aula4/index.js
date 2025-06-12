@@ -1,17 +1,27 @@
 const fs = require('fs').promises;
-const { readdir } = require('fs');
 const path = require('path');
 
 async function readdir(rootDir) {
-    rootDir = rootDir || path.resolve(__dirname)
-    const files = await fs.readdir();
-    walk(files);
+    rootDir = rootDir || path.resolve(__dirname);
+    const files = await fs.readdir(rootDir);
+    walk(files, rootDir);
 }
 
-function walk(files){
+async function walk(files, rootDir){
     for(let file of files) {
-        console.log(file)
+        const fileFullPath = path.resolve(rootDir, file);
+        const stats = await fs.stat(fileFullPath);
+
+        if(/\.git/g.test(fileFullPath)) continue;
+        if(/node_modules/g.test(fileFullPath)) continue;
+
+        if(stats.isDirectory()) {
+            readdir(fileFullPath);
+            continue
+        }
+
+        console.log(fileFullPath);
     }
 };
 
-readdir('C:\Users\guilh\OneDrive\Documentos\curso_full_stack\cursoJS')
+readdir('/home/silvacruz/estudo/html/cursoJS/')
